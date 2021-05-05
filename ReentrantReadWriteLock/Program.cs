@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace ReentrantReadWriteLock
 {
@@ -6,7 +7,11 @@ namespace ReentrantReadWriteLock
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ReadWriteLock readWriteLock = new ReadWriteLock();
+            readWriteLock.WriteLock();
+            readWriteLock.WriteUnlock();
+            readWriteLock.ReadLock();
+            readWriteLock.ReadUnlock();
         }
     }
 }
